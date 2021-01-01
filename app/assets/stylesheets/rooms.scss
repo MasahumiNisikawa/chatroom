@@ -1,0 +1,58 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#side {
+    float: right;
+    width: 30%;
+    padding: 20px;
+    background-color: gray;
+}
+#side .box {
+    margin: 0 auto 30px auto;
+    padding: 0 0 20px 0;
+}
+#side .box th {
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: normal;
+}
+#side .box .boxBody {
+    padding: 8px;
+    border-right: solid 1px #C36;
+    border-bottom: solid 1px #C36;
+    border-left: solid 1px #C36;
+    background: #fff;
+}
+#side .box .boxBody ul {
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+#side .box .boxBody tr th {
+    padding: 8px 0 8px 4px;
+    list-style: none;
+    border-bottom: solid 1px #C36;
+}
+
+header{
+    background-color: red;
+    }
+.size {
+    height: 200px;
+}
+
+#main {
+ float: left;
+ width: 60%;
+ padding: 10px 30px 10px 10px;
+}
+#main th {
+ margin: 0 0 10px 0;
+ padding: 3px 10px 3px 10px;
+ color: #FFF;
+ font-size: 20px;
+ border-left: solid 10px #C00;
+}
