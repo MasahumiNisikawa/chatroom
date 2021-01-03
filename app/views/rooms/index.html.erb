@@ -3,7 +3,7 @@
     <header>
       チャット一覧
     </header>
-    <button type="button"> 新規作成</button>
+    <%= link_to "+新規", new_room_path, class:"btn btn-success" %> 
     
     <div id="side">
     　<div class="box">
@@ -16,17 +16,18 @@
       </div>
   　</div> 
   </body>
-<table>
+<table class="table table-striped">
  <tbody class="main">
-  <tr>
-  　<th>ルーム1<button type="button" class="btn btn-primary" >詳細</button>
-  </tr>
-  <tr>
-  　<th>ルーム2<button type="button" class="btn btn-primary" >詳細</button>
-  <tr>
-  　<th>ルーム3<button type="button" class="btn btn-primary">詳細</button></th>
-  </tr>
+  
  </tbody>
- 
+ <% @rooms.each do |room| %>
+  <tr>
+    <td><%= room.name %>ルーム名</td>
+    <td>
+      <%= link_to "詳細", room_path(room), class: "btn btn-info" %>
+    </td>
+    </tr>
+ <% end %>
+
 </table>
 
