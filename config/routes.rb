@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   get 'rooms/index'
+  get "/rooms" => "rooms#index"
   post "/rooms" => "rooms#create"
+  post "/rooms/new" => "rooms#create"
   get "/rooms/new", to: "rooms#new", as: "new_room"
   get "/rooms/:id", to: "rooms#show", as: "room"
 

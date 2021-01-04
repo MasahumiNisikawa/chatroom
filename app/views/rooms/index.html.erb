@@ -1,32 +1,24 @@
 <html>
   <body>
+   <div>チャットルーム</div>
     <header>
       チャット一覧
     </header>
     <%= link_to "+新規", new_room_path, class:"btn btn-success" %> 
-    
-    <div id="side">
-    　<div class="box">
-        <h2>プロフィール</h2>
-        <div class="boxBody">
-          <tr>
-            <th>名前</th>            
-          </tr>
-        </div>
-      </div>
-  　</div> 
   </body>
-<table class="table table-striped">
- <tbody class="main">
-  
+<table class="container">
+ <tbody class="row row-cols-auto">
+
  </tbody>
  <% @rooms.each do |room| %>
-  <tr>
-    <td><%= room.name %>ルーム名</td>
-    <td>
-      <%= link_to "詳細", room_path(room), class: "btn btn-info" %>
-    </td>
-    </tr>
+   <tr>
+     <td class="row row-cols-auto">
+       <%= room.name %>
+     </td>
+      <td>
+        <%= link_to "詳細", room_path(room), class: "btn btn-info" %>
+      </td>
+   </tr>
  <% end %>
 
 </table>
