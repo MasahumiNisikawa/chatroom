@@ -3,7 +3,7 @@ class CreateMessages < ActiveRecord::Migration[6.0]
     create_table :messages do |t|
       t.integer :room_id
       t.integer :user_id
-      t.text :content
+      t.text :content, null: false, default: ""
 
       t.timestamps
     end

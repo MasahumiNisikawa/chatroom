@@ -8,12 +8,14 @@
   </body>
 <table class="container">
  <tbody class="row row-cols-auto">
-
+    <tr>
+     <th>ルーム名</th>
+    </tr>
  </tbody>
  <% @rooms.each do |room| %>
    <tr>
      <td class="row row-cols-auto">
-       <%= room.name %>
+       <%= room.room_name %>
      </td>
       <td>
         <%= link_to "詳細", room_path(room), class: "btn btn-info" %>
