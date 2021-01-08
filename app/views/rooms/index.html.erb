@@ -1,27 +1,32 @@
 <html>
-  <body>
-   <div>チャットルーム</div>
-    <header>
-      チャット一覧
-    </header>
-    <%= link_to "+新規", new_room_path, class:"btn btn-success" %> 
-  </body>
-<table class="container">
- <tbody class="row row-cols-auto">
-    <tr>
-     <th>ルーム名</th>
-    </tr>
- </tbody>
- <% @rooms.each do |room| %>
-   <tr>
-     <td class="row row-cols-auto">
-       <%= room.room_name %>
-     </td>
-      <td>
-        <%= link_to "詳細", room_path(room), class: "btn btn-info" %>
-      </td>
-   </tr>
- <% end %>
-
-</table>
+  <p id="notice"><%= notice %></p>
+    <body>
+     <div>チャットルーム</div>
+      <header>
+        チャット一覧
+      </header>
+      <%= link_to "+新規", new_room_path, class:"btn btn-success" %> 
+    </body>
+  <table class="container">
+    <thead class="row row-cols-auto"><thead>
+        <tr>
+          <th>ルーム名</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+    <tbody>
+      <% @rooms.each do |room| %>
+        <tr>
+          <td class="row row-cols-auto">
+            <%= room.name %>
+          </td>
+            <td>
+              <%= link_to "詳細", room_path(room), class: "btn btn-info" %>
+              <%= link_to "削除", room_path(room), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn btn-warning" %>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</html>
 

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_185133) do
 
   create_table "rooms", force: :cascade do |t|
     t.integer "user_id"
-    t.string "room_name", default: "", null: false
+    t.string "name", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

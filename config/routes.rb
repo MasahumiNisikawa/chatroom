@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post "/rooms/new" => "rooms#create"
   get "/rooms/new", to: "rooms#new", as: "new_room"
   get "/rooms/:id", to: "rooms#show", as: "room"
+  patch "/rooms/:id", to: "rooms#update"
+  delete "/rooms/:id", to: "rooms#destroy"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
