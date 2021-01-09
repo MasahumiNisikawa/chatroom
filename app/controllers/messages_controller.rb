@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 
   private
 
-    def set_room
+    def set_message
       @messages = Message.find(params[:id])
     end
 
