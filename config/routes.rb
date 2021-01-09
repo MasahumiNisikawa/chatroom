@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'message/destroy'
+  get 'message/create'
   root 'rooms#index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
