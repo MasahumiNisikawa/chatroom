@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'message/destroy'
-  get 'message/create'
+
   root 'rooms#index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -18,6 +17,11 @@ Rails.application.routes.draw do
   get "/rooms/:id", to: "rooms#show", as: "room"
   patch "/rooms/:id", to: "rooms#update"
   delete "/rooms/:id", to: "rooms#destroy"
+
+resources :rooms do
+  resources :messages
+end 
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
