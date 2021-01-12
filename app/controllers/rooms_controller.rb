@@ -9,7 +9,7 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @rooms = Room.new
+    @room = Room.new
   end
   
   def create
@@ -42,6 +42,6 @@ class RoomsController < ApplicationController
     end
 
     def rooms_params
-      params.require(:room).permit(:name, :body)
+      params.require(:room).permit(:name)
     end
 end

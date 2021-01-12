@@ -1,20 +1,19 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[:destroy]
-  def index
-    @meassges = Message.all
-  end
-  
-  def destroy
-    @message.destroy!
-  end
+  before_action :set_room
 
   def create
-    Message.create!(message_params)
+     @message = @room.messages.build(message_params)
+     @message.save      
+  end
 
   private
 
-    def set_message
-      @message = Message.find(params[:id])
+  def set_room
+    @room = Room.find(params[:room_id])
+  end
+
+  def set_message
+      @messages = Message.find(params[:id])
     end
 
     def messages_params

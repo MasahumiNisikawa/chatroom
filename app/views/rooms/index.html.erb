@@ -8,18 +8,16 @@
       <%= link_to "+新規", new_room_path, class:"btn btn-success" %> 
     </body>
   <table class="container">
-    <thead class="row row-cols-auto"><thead>
+    <thead class="row row-cols-auto">
         <tr>
           <th>ルーム名</th>
           <th colspan="2"></th>
         </tr>
-      </thead>
+    </thead>
     <tbody>
       <% @rooms.each do |room| %>
         <tr>
-          <td class="row row-cols-auto">
-            <%= room.name %>
-          </td>
+            <td><%= room.name %></td>
             <td>
               <%= link_to "詳細", room_path(room), class: "btn btn-info" %>
               <%= link_to "削除", room_path(room), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn btn-warning" %>

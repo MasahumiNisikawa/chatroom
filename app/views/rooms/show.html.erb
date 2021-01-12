@@ -5,9 +5,13 @@
   <%= @room.name %>
 </p>
 <hr>
-<div id="messages">
- <%= render @messages %>
-</div>
-<hr>
-<% render 'form' %>
+ <ul>
+<% @room.messages.order(:created_at).each do |message| %>
+  <li><%= message.content %><li>
+<% end %>
+</ul>
+
+<%= render 'messages' %>
+ 
+ <% render 'form', room: @room %>
 <%= link_to '戻る', rooms_path %>

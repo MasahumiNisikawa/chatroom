@@ -13,14 +13,10 @@ Rails.application.routes.draw do
   get "/rooms" => "rooms#index"
   post "/rooms" => "rooms#create"
   post "/rooms/new" => "rooms#create"
-  get "/rooms/new", to: "rooms#new", as: "new_room"
-  get "/rooms/:id", to: "rooms#show", as: "room"
-  patch "/rooms/:id", to: "rooms#update"
-  delete "/rooms/:id", to: "rooms#destroy"
 
-resources :rooms do
-  resources :messages
-end 
+  resources :rooms do
+    resources :messages, only: %i(create)
+ end
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
